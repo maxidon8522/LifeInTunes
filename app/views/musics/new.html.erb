@@ -1,0 +1,29 @@
+<h1>MusicLife</h1>
+<h3>新規music</h3>
+<%= form_for @musics do |f| %>
+    <div class="field">
+    <%= f.label :Music_name %>
+    <%= f.text_field :music_name, :size => 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Phrase  %>
+    <%= f.text_area :phrase, :size => "30x2" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Artist %>
+    <%= f.text_field :カラム名, :size => 30 %>
+  </div>
+
+  
+  <div class="field">
+    <%= f.label :comment  %>
+    <%= f.text_area :comment, :size => "30x2" %>
+  </div>
+
+  <%= f.submit "musicを投稿する" %>
+  <% end %>
+  
+  <%= link_to "一覧に戻る", musics_path %>
+  

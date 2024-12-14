@@ -1,0 +1,27 @@
+<h1>MusicLife</h1>
+<h3>一覧ページ</h3>
+<%= link_to "新規投稿へ", new_music_path %>
+<div class="musics-container">
+  <% @musics.each do |t| %>
+    <div class="tweet">
+      <%= t.Music_name %>
+      <%= t.Phrase %>
+      <%= t.Artist %>
+      <%= t.comment %>
+    </div>
+  <% end %>
+
+   <header>
+   <h1>LifeInTunes</h1>
+   <div class="header-list">
+    <ul>
+     <% if user_signed_in? %>
+      <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+     <% else %>
+      <li><%= link_to "新規登録", new_user_registration_path %></li>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
+     <% end %>
+    </ul>
+   </div>
+  </header>
+</div>
